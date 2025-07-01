@@ -406,7 +406,7 @@ class __MultiSelectDialogFieldViewState<V>
           separateSelectedItems: widget.separateSelectedItems,
           onConfirm: (selected) {
             _selectedItems = selected;
-            if (widget.state != null) {
+            if (widget.state != null && widget.state!.mounted) {
               widget.state!.didChange(_selectedItems);
             }
             if (widget.onConfirm != null) widget.onConfirm!(_selectedItems);
